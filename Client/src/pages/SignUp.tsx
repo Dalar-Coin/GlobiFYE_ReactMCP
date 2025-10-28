@@ -81,7 +81,12 @@ const SignUp = () => {
               You could be the next one!
             </div>
           </div>
-
+          <button
+            className="border rounded-lg p-5 mb-5"
+            onClick={() => navigate('/Welcome')}
+          >
+            To Welcome Screen
+          </button>
           <img src={turing} className="rounded-b-[20px]" alt="turing" />
         </div>
       </div>

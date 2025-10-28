@@ -5,6 +5,7 @@ import reddit from '../assets/login/Reddit.c0475776.png'
 import pepsi from '../assets/login/Pepsi Logo.png'
 import turing from '../assets/login/Turing.jpg'
 import { useNavigate } from 'react-router-dom'
+import Nav from '../components/Nav'
 
 const Login = () => {
   let navigate = useNavigate()
