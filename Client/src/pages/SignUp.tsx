@@ -87,6 +87,12 @@ const SignUp = () => {
           >
             To Welcome Screen
           </button>
+          <button
+            className="border rounded-lg p-5 mb-5"
+            onClick={() => navigate('/Jobs')}
+          >
+            To Jobs Page
+          </button>
           <img src={turing} className="rounded-b-[20px]" alt="turing" />
         </div>
       </div>
