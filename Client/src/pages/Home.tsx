@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="container mx-auto flex justify-center gap-5">
-      <div className="border 5 rounded-lg p-2">Hello World</div>
+      <div className="border 5 rounded-lg p-2">Hello</div>
       <div>
         <button
           className="border 5 rounded-lg p-2"
