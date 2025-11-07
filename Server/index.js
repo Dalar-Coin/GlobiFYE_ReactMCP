@@ -1,9 +1,21 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const User = require('./models/user_model.js')
 const app = express()
+
+app.use(express.json())
 
 app.get('/', (req, res) => {
   res.send('Hello from Node API Server Updated')
+})
+
+app.post('/api/users', async (req, res) => {
+  try {
+    const User = await User.create(req.body)
+    res.status(200).json(user)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
 })
 
 mongoose
