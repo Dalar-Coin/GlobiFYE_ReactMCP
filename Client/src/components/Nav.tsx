@@ -24,7 +24,7 @@ const Nav = () => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="flex gap-5 p-2">
           <div>Job Opportunities</div>
           <div>Danish</div>
         </div>
