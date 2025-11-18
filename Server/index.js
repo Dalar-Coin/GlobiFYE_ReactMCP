@@ -9,6 +9,15 @@ app.get('/', (req, res) => {
   res.send('Hello from Node API Server Updated')
 })
 
+app.get('/api/users', async (req, res) => {
+  try {
+    const users = await User.find({})
+    res.status(200).json(users)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
+
 app.post('/api/users', async (req, res) => {
   try {
     const user = await User.create(req.body)
