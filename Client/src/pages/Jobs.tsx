@@ -13,7 +13,7 @@ const Jobs = () => {
         <div className="border p-5 m-5 rounded-md flex justify-between p-5">
           Data Scientist / Analyist
           <div>
-            <button className="border rounded-sm p-4 m-5 hover:bg-gray-200 duration-150">
+            <button className="border rounded-sm p-4 m-5 hover:bg-red-200 duration-150">
               View Job Description
             </button>
 
