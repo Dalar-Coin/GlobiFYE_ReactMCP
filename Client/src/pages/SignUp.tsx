@@ -1,13 +1,42 @@
-import React from 'react'
+import React, { useState } from 'react'
 import anthropic from '../assets/login/Anthropic.png'
 import gemini from '../assets/login/gemini.92263585.png'
 import reddit from '../assets/login/Reddit.c0475776.png'
 import pepsi from '../assets/login/Pepsi Logo.png'
 import turing from '../assets/login/Turing.jpg'
 import { useNavigate } from 'react-router-dom'
+import axios, { isCancel, AxiosError } from 'axios'
 
 const SignUp = () => {
   let navigate = useNavigate()
+
+  let [email, setEmail] = useState('')
+  let [password, setPassword] = useState('')
+
+  const handleInput = (e) => {
+    setEmail({...email, [e.target.email]})
+    setPassword({...password, [e.target.password]})
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    try {
+      axios
+        .post('/api/users', {
+          firstName: 'Fred',
+          lastName: 'Flintstone',
+        })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
   return (
     <div className="container mx-auto flex justify-center mt-5 mr-15">
@@ -26,11 +55,19 @@ const SignUp = () => {
         <form className="flex flex-col">
           <label className="flex flex-col gap-2">
             Email
-            <input type="text" className="rounded-lg p-3 bg-gray-200 mb-5" />
+            <input
+              className="rounded-lg p-3 bg-gray-200 mb-5"
+              onChange={handleSubmit}
+              type="text"
+            />
           </label>
           <label className="flex flex-col gap-2">
             Password
-            <input className="rounded-lg p-3 bg-gray-200 mb-5" type="text" />
+            <input
+              className="rounded-lg p-3 bg-gray-200 mb-5"
+              onChange={handleSubmit}
+              type="text"
+            />
           </label>
           <div className="mb-5">
             By signing up, you agree to Turing's Terms of Service and Privacy

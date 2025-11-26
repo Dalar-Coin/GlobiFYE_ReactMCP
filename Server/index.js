@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const User = require('./models/user.model.js')
+const cors = require('cors')
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Hello from Node API Server Updated')
