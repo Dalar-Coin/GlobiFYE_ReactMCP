@@ -1,42 +1,42 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import anthropic from '../assets/login/Anthropic.png'
 import gemini from '../assets/login/gemini.92263585.png'
 import reddit from '../assets/login/Reddit.c0475776.png'
 import pepsi from '../assets/login/Pepsi Logo.png'
 import turing from '../assets/login/Turing.jpg'
 import { useNavigate } from 'react-router-dom'
-import axios, { isCancel, AxiosError } from 'axios'
+// import axios, { isCancel, AxiosError } from 'axios'
 
 const SignUp = () => {
   let navigate = useNavigate()
 
-  let [email, setEmail] = useState('')
-  let [password, setPassword] = useState('')
+  // let [email, setEmail] = useState('')
+  // let [password, setPassword] = useState('')
 
-  const handleInput = (e) => {
-    setEmail({...email, [e.target.email]})
-    setPassword({...password, [e.target.password]})
-  }
+  // const handleInput = (e) => {
+  //   setEmail({...email, [e.target.email]})
+  //   setPassword({...password, [e.target.password]})
+  // }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
 
-    try {
-      axios
-        .post('/api/users', {
-          firstName: 'Fred',
-          lastName: 'Flintstone',
-        })
-        .then(function (response) {
-          console.log(response)
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-    } catch (error) {
-      console.error(error)
-    }
-  }
+  //   try {
+  //     axios
+  //       .post('/api/users', {
+  //         firstName: 'Fred',
+  //         lastName: 'Flintstone',
+  //       })
+  //       .then(function (response) {
+  //         console.log(response)
+  //       })
+  //       .catch(function (error) {
+  //         console.log(error)
+  //       })
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
   return (
     <div className="container mx-auto flex justify-center mt-5 mr-15">
@@ -57,7 +57,7 @@ const SignUp = () => {
             Email
             <input
               className="rounded-lg p-3 bg-gray-200 mb-5"
-              onChange={handleSubmit}
+              // onChange={handleSubmit}
               type="text"
             />
           </label>
@@ -65,7 +65,7 @@ const SignUp = () => {
             Password
             <input
               className="rounded-lg p-3 bg-gray-200 mb-5"
-              onChange={handleSubmit}
+              // onChange={handleSubmit}
               type="text"
             />
           </label>
